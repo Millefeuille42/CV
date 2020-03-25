@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title><%= title %></title>
+    <% if (mobile === "PHONE") { %>
+      <link rel='stylesheet' href='/stylesheets/mstyle.css'/>
+    <% } else { %>
+      <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <% } %>
+      <meta charset="UTF-8">
+    <link rel="icon" href="/images/favicon.ico" />
+  </head>
+
+  <body>
+    <div id="HeadLine">
+      <img src="/images/profile.jpg" alt="" height="100px" width="100px">
+      <div id="Title">
+        <div>
+          <h1>MATHIEU LABOURIER</h1>
+          <h2>Backend Developer</h2>
+        </div>
+      </div>
+      <div id="Contact">
+        <% for (var entry in contactList) { %>
+            <div class="contactEntry">
+              <img src="<%= contactList[entry]["image"] %>" alt="" width="16px" height="16px">
+              <% if (contactList[entry]["type"] === "span") { %>
+                <span title="<%= contactList[entry]["title"] %>"><%= contactList[entry]["text"] %></span>
+              <% } else { %>
+                <a href="<%= contactList[entry]["link"]%>" title="<%= contactList[entry]["title"] %>" target="_blank"><%= contactList[entry]["text"] %></a>
+              <% } %>
+            </div>
+        <% } %>
+      </div>
+    </div>
+    <div id="About" class="category">
+      <h1>About Me</h1>
+      <div class="content">
+        <div class="categoryEntry sk">
+          <h2>Skills</h2>
+          <div class="skEntry">
+            <div class="skills">
+              <% for (var entry in TskillFList) { %>
+                <% if (entry != 0) { %>
+                  <div class="limiter"></div>
+                <% } entry = TskillFList[entry]; %>
+                <ul class="skillFamily">
+                  <% for (var skill in entry) { skill = entry[skill];%>
+                    <li class="skills"> <%= skill %></li>
+                  <% } %>
+                </ul>
+              <% } %>
+            </div>
+            <div class="skills">
+              <% for (var entry in SskillFList) { %>
+                <% if (entry != 0) { %>
+                  <div class="limiter"></div>
+                <% } entry = SskillFList[entry]; %>
+                <ul class="skillFamily">
+                  <% for (var skill in entry) { skill = entry[skill];%>
+                  <li class="skills"> <%= skill %></li>
+                  <% } %>
+                </ul>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="categoryEntry">
+          <h2>Languages</h2>
+          <% for (var entry in languages) { entry = languages[entry]%>
+          <div class="language">
+            <span><%= entry["name"] %></span>
+            <div class="Langlevel">
+            <% var i = 0; while (i < 5) { %>
+              <% if (i >= entry["level"]) { %>
+                <img src="/images/Levelko.svg" alt="" width="16px" height="16px">
+              <% } else { %>
+                <img src="/images/Levelok.svg" alt="" width="16px" height="16px">
+            <% } i++; } %>
+            </div>
+          </div>
+          <% } %>
+          <h2>Spare Time Activities</h2>
+          <ul class="El detailsL">
+          <% for (var i in spareTimeActivities) { var entry = spareTimeActivities[i]%>
+            <li class="details"><%= entry %></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="Scholarship" class="category">
+      <h1>Scholarship</h1>
+      <div class="content">
+        <% for (var entry in scholarList) { %>
+          <div class="categoryEntry">
+            <h2><%= scholarList[entry]["title"]%></h2>
+            <h3><%= scholarList[entry]["school"]%></h3>
+            <div class="El date">
+              <img src="<%= scholarList[entry]["date"]["image"] %>" alt="" width="16px" height="16px">
+              <span><%= scholarList[entry]["date"]["text"]%></span>
+            </div>
+            <div class="El location">
+              <img src="<%= scholarList[entry]["location"]["image"] %>" alt="" width="16px" height="16px">
+              <span><%= scholarList[entry]["location"]["text"]%></span>
+            </div>
+            <ul class="El detailsL">
+              <% for (var detail in scholarList[entry]["details"]) { %>
+                <li class="details"><%= scholarList[entry]["details"][detail] %></li>
+              <% } %>
+            </ul>
+          </div>
+        <% } %>
+      </div>
+    </div>
+    <div id="Projects" class="category">
+      <h1>Projects</h1>
+      <div class="content">
+        <% for (var entry in projectList) { entry = projectList[entry]; %>
+        <% if (entry["link"] != null) { %>
+        <a href="<%= entry["link"]%>" target="_blank" class="categoryEntry">
+          <% } else { %>
+          <div class="categoryEntry">
+            <% } %>
+            <h2><%= entry["title"]%></h2>
+            <ul class="detailsL">
+              <% for (var lang in entry["lang"]) { lang = entry["lang"][lang];%>
+              <li class="details lang"><%= lang%></li>
+              <% } %>
+            </ul>
+            <span class="details"><%= entry["details"]%></span>
+            <% if (entry["link"] == null) { %>
+          </div>
+          <% } else { %>
+        </a>
+        <% } %>
+        <% } %>
+      </div>
+    </div>
+    <div id="Achievements" class="category">
+      <h1>Achievements</h1>
+      <div class="content">
+        <% for (var entry in achievList) { %>
+        <div class="categoryEntry">
+          <h2><%= achievList[entry]["cat"]%></h2>
+          <h3><%= achievList[entry]["title"]%></h3>
+          <div class="El date">
+            <img src="<%= achievList[entry]["date"]["image"] %>" alt="" width="16px" height="16px">
+            <span><%= achievList[entry]["date"]["text"]%></span>
+          </div>
+          <div class="El location">
+            <img src="<%= achievList[entry]["location"]["image"] %>" alt="" width="16px" height="16px">
+            <span><%= achievList[entry]["location"]["text"]%></span>
+          </div>
+          <% if (achievList[entry]["details"] != null) { %>
+            <span class="details"><%= achievList[entry]["details"]%></span>
+          <% } %>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+
+</html>

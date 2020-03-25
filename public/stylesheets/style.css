@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+2&display=swap');
+
+body
+{
+  font: 16px 'Baloo 2', cursive;
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  justify-self: center;
+  align-self: center;
+  font-weight: bold;
+}
+
+#HeadLine
+{
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  justify-self: center;
+  align-self: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+#HeadLine > img
+{
+  margin-top: 1em;
+  margin-bottom: -0.5em;
+  border-radius: 50%;
+  z-index: 75;
+  box-shadow: 3px 3px 0.75em 0.3em rgba(0, 0, 0, 0.1);
+  transition: box-shadow, z-index;
+  transition-duration: 2s;
+}
+
+#Title
+{
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+}
+#Title h1
+{
+  font-weight: bolder;
+}
+#Title h2
+{
+  margin-top: -1.2em;
+  text-align: center;
+  color: #2286c3;
+}
+
+#Contact
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  width: 75%;
+  margin-top: -0.5em;
+  padding-bottom: 1em;
+}
+
+.contactEntry
+{
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  cursor: default;
+  justify-self: center;
+  align-self: center;
+  margin-right: 0.75em;
+  margin-left: 0.75em;
+  margin-bottom: 0.5em;
+  padding: 0 0.1em;
+  font-weight: bold;
+}
+.contactEntry img
+{
+  align-self: center;
+  margin-top: -3px;
+  padding-right: 0.3em;
+}
+.contactEntry a
+{
+  cursor: inherit;
+  color: currentColor;
+  text-decoration: none;
+}
+
+.category
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.content
+{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+.content > a
+{
+  cursor: inherit;
+  color: currentColor;
+  text-decoration: none;
+}
+
+.categoryEntry
+{
+  z-index: 50;
+  text-align: center;
+  box-shadow: 3px 3px 0.5em 0.2em rgba(0, 0, 0, 0.1);
+  transition: box-shadow, z-index;
+  transition-duration: 0.5s;
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  padding: 1em;
+  width: 25%;
+  height: auto;
+  min-width: 15em;
+  cursor: default;
+}
+.categoryEntry:hover{
+  z-index: 100;
+  box-shadow: 3px 3px 1em 0.4em rgba(0, 0, 0, 0.1);
+  transition: box-shadow, z-index;
+  transition-duration: 0.5s;
+}
+.categoryEntry h2
+{
+  justify-self: center;
+  align-self: center;
+  margin-bottom: 0;
+}
+.categoryEntry h3
+{
+  justify-self: center;
+  align-self: center;
+  margin-top: 0;
+  color: #2286c3;
+}
+.categoryEntry > div.el
+{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  font-weight: bold;
+}
+.categoryEntry img
+{
+  align-self: center;
+  margin-top: -3px;
+  padding-right: 0.3em;
+}
+.categoryEntry ul.detailsL
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  white-space: nowrap;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+  padding: 0 1em;
+  width: 100%;
+  list-style: none;
+}
+.details
+{
+  padding: 0.2em 0.5em;
+}
+li.details
+{
+  font-weight: normal;
+}
+li.details.lang
+{
+  font-weight: bold;
+  color: #2286c3;
+}
+span.details
+{
+  font-weight: normal;
+  padding: 0.2em 0.5em;
+}
+
+.projectLanguages
+{
+  font-weight: normal;
+  width: 100%;
+}
+.projectLanguages li
+{
+  display: flex;
+  flex-direction: row;
+
+  align-self: center;
+  justify-self: center;
+}
+
+.sk
+{
+  flex-direction: column;
+}
+
+.skEntry
+{
+  display: flex;
+  flex-direction: row;
+}
+
+div.skills
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+
+  width: 50%;
+}
+
+.skillFamily
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+
+  list-style: none;
+  width: 100%;
+
+  padding: 0;
+  margin: 0.5em 0 0.5em 0;
+}
+
+li.skills
+{
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  width: 50%;
+  white-space: normal;
+}
+
+.limiter
+{
+  margin: 0.5em;
+  border: #2286c3 solid 1px;
+  width: 75%;
+  height: 0;
+  align-self: center;
+  justify-self: center;
+}
+
+ul.activity
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  white-space: nowrap;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+  padding: 0 1em;
+  width: 100%;
+  list-style: none;
+}
+
+.language
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  justify-self: center;
+  align-self: center;
+  margin-top: 1em;
+  margin-left: -1em;
+  width: 100%;
+}
+.language span
+{
+  justify-self: center;
+  align-self: center;
+  width: 25%;
+}
+.language img
+{
+  justify-self: center;
+  margin-left: auto;
+  align-self: center;
+  margin-top: 0.5em;
+}

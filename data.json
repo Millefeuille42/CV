@@ -1,0 +1,231 @@
+{
+  "aboutList":
+  {
+    "TskillFList":
+    [
+      [
+        "Rest Api",
+        "Networking",
+        "CyberSecurity"
+      ],
+      [
+        "Python",
+        "TensorFlow"
+      ],
+      [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Node.js",
+        "EJS",
+        "TensorFlow.js"
+      ],
+      [
+        "C",
+        "C#",
+        "Ruby"
+      ]
+    ],
+    "SskillFList":
+    [
+      [
+        "Mentoring",
+        "Patience",
+        "Tolerance"
+      ],
+      [
+        "Leadership",
+        "Coordination",
+        "Project Management",
+        "Organization"
+      ],
+      [
+        "Maths",
+        "Energy",
+        "Environment"
+      ]
+    ],
+    "spareTimeActivities":
+    [
+      "Target shooting",
+      "Music",
+      "Video Games",
+      "Programming",
+      "CyberSecurity challenges",
+      "Tinking"
+    ],
+    "languages":
+    [
+      {
+        "name": "French",
+        "level": 5
+      },
+      {
+        "name": "English",
+        "level": 4
+      },
+      {
+        "name": "Spanish",
+        "level": 2
+      }
+    ]
+  },
+  "contactList":
+  [
+    {
+      "title": "Mail",
+      "image": "/images/email.svg",
+      "text": "mathieu.labourier@gmail.com",
+      "type": "span"
+    },
+    {
+      "title": "Phone",
+      "image": "/images/phone.svg",
+      "text": "+33 7 66 58 12 78",
+      "type": "span"
+    },
+    {
+      "title": "Location",
+      "image": "/images/location.svg",
+      "text": "Paris, FRANCE",
+      "type": "span"
+    },
+    {
+      "title": "Linkedin",
+      "image": "/images/work.svg",
+      "text": "LinkedIn",
+      "type": "a",
+      "link": "https://www.linkedin.com/in/mathieu-labourier-1901621a2/"
+    },
+    {
+      "title": "Github",
+      "image": "/images/git.svg",
+      "text": "Github",
+      "type": "a",
+      "link": "https://github.com/Millefeuille42"
+    }
+  ],
+  "scholarList":
+  [
+    {
+      "title": "Digital Technology Architect",
+      "school": "42 Paris",
+      "date":
+    {
+      "text": "October 2019",
+      "image": "/images/calendar.svg"
+    },
+      "location":
+    {
+      "text": "Paris, FRANCE",
+      "image": "/images/location.svg"
+    },
+      "details":
+      [
+      "Graphic",
+      "Network",
+      "Unix"
+      ]
+    },
+    {
+      "title": "Technological High School",
+      "school": "La Martinière Monplaisir",
+      "date":
+      {
+        "text": "September 2016 - June 2019",
+        "image": "/images/calendar.svg"
+      },
+      "location":
+      {
+        "text": "Lyon, FRANCE",
+        "image": "/images/location.svg"
+      },
+      "details":
+      [
+        "Sustainable Development",
+        "Energy",
+        "Environment",
+        "Engineering"
+      ]
+    }
+  ],
+  "achievList":
+  [
+    {
+      "cat": "Nationwide Engineering Contest \"OSI\"",
+      "title": "10th place | Educational Innovation Award",
+      "date":
+      {
+        "text": "May 2019",
+        "image": "/images/calendar.svg"
+      },
+      "location":
+      {
+        "text": "EDF Saclay Campus, FRANCE",
+        "image": "/images/location.svg"
+      },
+      "details": "Me and my team designed and prototyped a full system permitting courses and remote practicing on learning-oriented heavy machinery."
+    },
+    {
+      "cat": "Technological Baccalaureate",
+      "title": "60-70% | Assez Bien",
+      "date":
+      {
+        "text": "July 2019",
+        "image": "/images/calendar.svg"
+      },
+      "location":
+      {
+        "text": "Lyon, FRANCE",
+        "image": "/images/location.svg"
+      },
+      "details": null
+    }
+  ],
+  "projectList":
+  [
+    {
+      "title": "JSON_lib",
+      "lang":
+      [
+        "C"
+      ],
+      "details": "A JSON C library I designed",
+      "link": "https://github.com/Millefeuille42/JSON_lib"
+    },
+    {
+      "title": "PisciBot",
+      "lang":
+      [
+        "Javascript",
+        "Ruby",
+        "Python",
+        "Rest API"
+      ],
+      "details": "A Slackbot to follow admission period members, it alerts when someone validates a project. It prints customizable roadmaps on demand",
+      "link": null
+    },
+    {
+      "title": "Cursus 42",
+      "lang":
+      [
+        "C",
+        "CMAKE",
+        "Docker",
+        "Git",
+        "Assembly"
+      ],
+      "details": "What I did at 42 School",
+      "link": "https://github.com/Millefeuille42/MilleFeuille42"
+    },
+    {
+      "title": "Shellscripts",
+      "lang":
+      [
+        "Shell"
+      ],
+      "details": "A bunch of \"Life Saving\" Shell scripts I designed",
+      "link": "https://github.com/Millefeuille42/shellscripts"
+    }
+  ]
+}

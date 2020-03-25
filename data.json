@@ -164,7 +164,7 @@
         "text": "EDF Saclay Campus, FRANCE",
         "image": "/images/location.svg"
       },
-      "details": "Me and my team designed and prototyped a full system permitting courses and remote practicing on learning-oriented heavy machinery."
+      "details": "Me and my team designed and prototyped a full system permitting courses and remote practicing on learning-oriented heavy machinery"
     },
     {
       "cat": "Technological Baccalaureate",
@@ -203,6 +203,18 @@
         "Rest API"
       ],
       "details": "A Slackbot to follow admission period members, it alerts when someone validates a project. It prints customizable roadmaps on demand",
+      "link": null
+    },
+    {
+      "title": "Spotify Party Mode",
+      "lang":
+      [
+        "Javascript",
+        "HTML",
+        "CSS",
+        "Rest API"
+      ],
+      "details": "A WebApp for Spotify that create a shared playing queue",
       "link": null
     },
     {

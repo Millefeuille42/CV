@@ -5,6 +5,7 @@ var device = require('express-device');
 var router = express.Router();
 
 router.use(device.capture());
+
 router.get('/', function(req, res, next) {
 
     var data = JSON.parse(fs.readFileSync
@@ -25,6 +26,18 @@ router.get('/', function(req, res, next) {
             languages: data["aboutList"]["languages"],
             mobile: req.device.type.toUpperCase()
     });
+});
+
+router.get('/', function(req, res, next) {
+
+    var data = JSON.parse(fs.readFileSync
+    ("./data.json" , "utf-8"));
+
+    console.log(req.device.type.toUpperCase());
+
+    if (req.device.type.toUpperCase() === "PHONE")
+        res.redirect('/');
+    res.render('cub3D');
 });
 
 module.exports = router;

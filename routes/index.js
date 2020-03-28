@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/', function(req, res, next) {
+router.get('/cub3D', function(req, res, next) {
 
     var data = JSON.parse(fs.readFileSync
     ("./data.json" , "utf-8"));

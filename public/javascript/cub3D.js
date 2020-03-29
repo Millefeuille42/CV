@@ -192,9 +192,9 @@ var map =
 		[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 	];
 
-var wall = new Color(134, 85, 173);
-var floor = new Color(100, 100, 48);
-var ceil = new Color(100, 26, 100);
+var wall = new Color(54, 36, 171);
+var floor = new Color(44, 149, 193);
+var ceil = new Color(83, 104, 173);
 var player = new Player(90, {x: 15, y: 16}, 0);
 var scale = 5;
 var precision = 1;
@@ -296,24 +296,25 @@ function f()
 		ray.send_ray();
 		for (var scale_i = 0; scale_i < scale; scale_i++)
 		{
-			draw_line(ray, screen_prop, player, x);
+			draw_line(ray, screen_prop, x, i);
 			x++;
-			i = i + inc;
 		}
+		for (scale_i = 0; scale_i < scale; scale_i++)
+			i = i + inc;
 	}
 	if (document.getElementById("minimap").checked === true)
 		draw_minimap();
 }
 
-function draw_line(ray, screen_prop, player, x)
+function draw_line(ray, screen_prop, x, i)
 {
 	var dist;
 	var line_height;
 	var line_start;
 	var line_end;
-
 	dist = Math.sqrt(Math.pow(player.pos.x - ray.c_pos.x, 2)
 		+ Math.pow(player.pos.y - ray.c_pos.y, 2));
+	dist = Math.cos((i - player.dir) * (Math.PI / 180)) * dist;
 	if (dist === 0)
 		line_height = 0;
 	else

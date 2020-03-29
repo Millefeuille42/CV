@@ -156,8 +156,8 @@ class Ray
 	{
 		while (map[this.m_pos.y][this.m_pos.x] == '0')
 		{
-			this.c_pos.x += this.dir.x / 50;
-			this.c_pos.y += this.dir.y / 50;
+			this.c_pos.x += this.dir.x / (5 * Math.pow(10, precision));
+			this.c_pos.y += this.dir.y / (5 * Math.pow(10, precision));
 			this.m_pos.x = Math.floor(this.c_pos.x);
 			this.m_pos.y = Math.floor(this.c_pos.y);
 		}
@@ -170,11 +170,11 @@ var map =
 		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
 		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
 		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+		[1,0,0,0,0,0,1,1,1,1,1,0,0,0,0,1,0,1,0,1,0,0,0,1],
+		[1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1],
+		[1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,1],
+		[1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1],
+		[1,0,0,0,0,0,1,1,0,1,1,0,0,0,0,1,0,1,0,1,0,0,0,1],
 		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
 		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
 		[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
@@ -195,11 +195,11 @@ var map =
 var wall = new Color(134, 85, 173);
 var floor = new Color(100, 100, 48);
 var ceil = new Color(100, 26, 100);
-var player = new Player(90, {x: 15, y: 16}, 310);
+var player = new Player(90, {x: 15, y: 16}, 0);
 var scale = 5;
+var precision = 1;
 
 resize_canvas();
-
 window.addEventListener("resize", resize_canvas);
 setInterval(main, 1);
 
@@ -215,9 +215,19 @@ function setFov(value)
 {
 	player.fov = value;
 	if (player.fov < 40)
-		scale = 40;
+		player.fov = 40;
 	if (player.fov > 140)
-		scale = 140;
+		player.fov = 140;
+	f();
+}
+
+function setPrecision(value)
+{
+	precision = value;
+	if (precision < 1)
+		precision = 1;
+	if (precision > 2)
+		precision = 2;
 	f();
 }
 
@@ -291,6 +301,8 @@ function f()
 			i = i + inc;
 		}
 	}
+	if (document.getElementById("minimap").checked === true)
+		draw_minimap();
 }
 
 function draw_line(ray, screen_prop, player, x)
@@ -316,9 +328,12 @@ function draw_line(ray, screen_prop, player, x)
 	ctx.closePath();
 	ctx.stroke();
 
-	ctx.strokeStyle = `rgb(${wall.shade(2, dist, 0, wall.r)},
-	${wall.shade(2, dist, 0, wall.g)},
-	${wall.shade(2, dist, 0, wall.b)})`;
+	if (document.getElementById("shading").checked === true)
+		ctx.strokeStyle = `rgb(${wall.shade(2, dist, 0, wall.r)},
+			${wall.shade(2, dist, 0, wall.g)},
+			${wall.shade(2, dist, 0, wall.b)})`;
+	else
+		ctx.strokeStyle = `rgb(${wall.r}, ${wall.g}, ${wall.b})`;
 	ctx.beginPath();
 	ctx.moveTo(x, line_start);
 	ctx.lineTo(x, line_end);
@@ -331,4 +346,21 @@ function draw_line(ray, screen_prop, player, x)
 	ctx.lineTo(x, screen_prop.y);
 	ctx.closePath();
 	ctx.stroke();
+}
+
+function draw_minimap()
+{
+	for (var i in map)
+	{
+		for (var i2 in map[i])
+		{
+			if (map[i][i2] == 1)
+				ctx.fillStyle = 'red';
+			else
+				ctx.fillStyle = 'blue';
+			ctx.fillRect(i2 * 4, i * 4, 4, 4);
+		}
+	}
+	ctx.fillStyle = 'white';
+	ctx.fillRect(player.pos.x * 4, player.pos.y * 4, 4, 4);
 }

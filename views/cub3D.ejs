@@ -7,32 +7,46 @@
     <link rel="stylesheet" href="/stylesheets/cub3D.css">
 </head>
 
-<body onresize="resize_canvas()">
-    <canvas id="canvas">Wrong Browser</canvas>
-    <div id="controls">
-        <label>
-            Scaling
-            <input type="range" min="1" max="10" value="5"
-                   oninput="setScale(this.value); display_change(this.value, 'scaling')">
-            <span id="scaling">5</span>
-        </label>
-        <label>
-            Fov
-            <input type="range" min="40" max="140" value="90"
-                   oninput="setFov(this.value); display_change(this.value, 'fov')">
-            <span id="fov">90</span>
-        </label>
-    </div>
-    <div id="text">
-        Controls:
-        <ul>
-            <li>W: Forward</li>
-            <li>A: Left</li>
-            <li>S: Backward</li>
-            <li>D: Right</li>
-            <li>Arrows: Camera Control</li>
-        </ul>
-    </div>
+<body>
+<canvas id="canvas">This browser does not support canvas</canvas>
+<div id="controls">
+    <label>
+        Scaling
+        <input type="range" min="1" max="10" value="5"
+               oninput="setScale(this.value); display_change(this.value, 'scaling')">
+        <span id="scaling">5</span>
+    </label>
+    <label>
+        Precision
+        <input type="range" min="1" max="3" value="1"
+               oninput="setPrecision(this.value); display_change(this.value, 'precision')">
+        <span id="precision">1</span>
+    </label>
+    <label>
+        Fov
+        <input type="range" min="40" max="140" value="90"
+               oninput="setFov(this.value); display_change(this.value, 'fov')">
+        <span id="fov">90</span>
+    </label>
+    <label>
+        Minimap
+        <input type="checkbox" id="minimap" onclick="f();">
+    </label>
+    <label>
+        Shading
+        <input type="checkbox" id="shading" checked onclick="f();">
+    </label>
+</div>
+<div id="text">
+    Controls:
+    <ul>
+        <li>W: Forward</li>
+        <li>A: Left</li>
+        <li>S: Backward</li>
+        <li>D: Right</li>
+        <li>Arrows: Camera Control</li>
+    </ul>
+</div>
 </body>
 
 <script type="text/javascript" src="/javascript/cub3D.js"></script>

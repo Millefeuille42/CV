@@ -9,16 +9,11 @@
         "CyberSecurity"
       ],
       [
-        "Python",
-        "TensorFlow"
-      ],
-      [
         "HTML",
         "CSS",
         "Javascript",
         "Node.js",
-        "EJS",
-        "TensorFlow.js"
+        "EJS"
       ],
       [
         "C",
@@ -36,7 +31,8 @@
       [
         "Leadership",
         "Coordination",
-        "Project Management",
+        "Management",
+        "Research",
         "Organization"
       ],
       [
@@ -240,7 +236,7 @@
       "link": "https://github.com/Millefeuille42/shellscripts"
     },
     {
-      "title": "Cub3D",
+      "title": "Cub3D.js",
       "lang":
       [
         "Javascript"

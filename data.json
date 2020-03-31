@@ -206,6 +206,8 @@
       "lang":
       [
         "Javascript",
+        "Node.js",
+        "EJS",
         "HTML",
         "CSS",
         "Rest API"

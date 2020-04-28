@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>cub3D</title>
+    <link rel="stylesheet" href="/stylesheets/cub3D.css">
+</head>
+
+<body>
+<canvas id="canvas">This browser does not support canvas</canvas>
+<div id="controls">
+    <label>
+        Fov
+        <input type="range" min="40" max="100" value="90"
+               oninput="setFov(this.value); display_change(this.value, 'fov')">
+        <span id="fov">90</span>
+    </label>
+</div>
+<div id="text">
+    Controls:
+    <ul>
+        <li>W: Forward</li>
+        <li>A: Left</li>
+        <li>S: Backward</li>
+        <li>D: Right</li>
+        <li>Arrows: Camera Control</li>
+    </ul>
+</div>
+</body>
+
+<script type="text/javascript" src="/javascript/square2D/vector.js"></script>
+<script type="text/javascript" src="/javascript/square2D/color.js"></script>
+<script type="text/javascript" src="/javascript/square2D/player.js"></script>
+<script type="text/javascript" src="/javascript/square2D/wall.js"></script>
+<script type="text/javascript" src="/javascript/square2D/ray.js"></script>
+<script type="text/javascript" src="/javascript/square2D/square2D.js"></script>
+
+</html>

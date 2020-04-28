@@ -6,7 +6,7 @@ var router = express.Router();
 
 router.use(device.capture());
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
 
     var data = JSON.parse(fs.readFileSync
     ("./data.json" , "utf-8"));
@@ -28,16 +28,22 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/cub3D', function(req, res, next) {
+// router.get('/cub3D', function(req, res, next) {
+//
+//     console.log(req.device.type.toUpperCase());
+//
+//     if (req.device.type.toUpperCase() === "PHONE")
+//         res.redirect('/');
+//     res.render('cub3D');
+// });
 
-    var data = JSON.parse(fs.readFileSync
-    ("./data.json" , "utf-8"));
+router.get('/square2D', function(req, res) {
 
     console.log(req.device.type.toUpperCase());
 
     if (req.device.type.toUpperCase() === "PHONE")
         res.redirect('/');
-    res.render('cub3D');
+    res.render('square2D');
 });
 
 module.exports = router;

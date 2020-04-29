@@ -11,18 +11,6 @@
 <canvas id="canvas">This browser does not support canvas</canvas>
 <div id="controls">
     <label>
-        Scaling
-        <input type="range" min="1" max="10" value="5"
-               oninput="setScale(this.value); display_change(this.value, 'scaling')">
-        <span id="scaling">5</span>
-    </label>
-    <label>
-        Precision
-        <input type="range" min="1" max="3" value="1"
-               oninput="setPrecision(this.value); display_change(this.value, 'precision')">
-        <span id="precision">1</span>
-    </label>
-    <label>
         Fov
         <input type="range" min="40" max="100" value="90"
                oninput="setFov(this.value); display_change(this.value, 'fov')">
@@ -30,11 +18,11 @@
     </label>
     <label>
         Minimap
-        <input type="checkbox" id="minimap" onclick="f();">
+        <input type="checkbox" id="minimap" onclick="sketch();">
     </label>
     <label>
         Shading
-        <input type="checkbox" id="shading" checked onclick="f();">
+        <input type="checkbox" id="shading" checked onclick="sketch();">
     </label>
 </div>
 <div id="text">
@@ -49,6 +37,11 @@
 </div>
 </body>
 
-<script type="text/javascript" src="/javascript/cub3D.js"></script>
+<script type="text/javascript" src="/javascript/graphic/vector.js"></script>
+<script type="text/javascript" src="/javascript/graphic/wall.js"></script>
+<script type="text/javascript" src="/javascript/graphic/color.js"></script>
+<script type="text/javascript" src="/javascript/graphic/cub3D/player.js"></script>
+<script type="text/javascript" src="/javascript/graphic/cub3D/ray.js"></script>
+<script type="text/javascript" src="/javascript/graphic/cub3D/cub3D.js"></script>
 
 </html>

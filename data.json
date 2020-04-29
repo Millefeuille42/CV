@@ -236,6 +236,15 @@
       ],
       "details": "A bunch of \"Life Saving\" Shell scripts I designed",
       "link": "https://github.com/Millefeuille42/shellscripts"
+    },
+    {
+      "title": "Cub3D.js",
+      "lang":
+      [
+        "Javascript"
+      ],
+      "details": "A little raycaster I designed. Click this tile to play! (Not available on phones)",
+      "link": "/cub3D"
     }
   ]
 }

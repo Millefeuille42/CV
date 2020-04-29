@@ -4,7 +4,6 @@ class Ray
     {
         this.pos = new Vector(x, y)
         this.dir = new Vector(Math.cos(angle * Math.PI / 180), Math.sin(angle * Math.PI / 180));
-        this.dist = Infinity;
     }
 
     check(wall)

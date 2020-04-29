@@ -29,10 +29,6 @@ var map =
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     ];
 
-var wall = new Color(54, 36, 171);
-var floor = new Color(44, 149, 193);
-var ceil = new Color(83, 104, 173);
-
 var player = new Player(90, {x: 3, y: 6},0, canvas);
 
 resize_canvas();

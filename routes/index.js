@@ -28,14 +28,14 @@ router.get('/', function(req, res) {
     });
 });
 
-// router.get('/cub3D', function(req, res, next) {
-//
-//     console.log(req.device.type.toUpperCase());
-//
-//     if (req.device.type.toUpperCase() === "PHONE")
-//         res.redirect('/');
-//     res.render('cub3D');
-// });
+ router.get('/cub3D', function(req, res, next) {
+
+     console.log(req.device.type.toUpperCase());
+
+     if (req.device.type.toUpperCase() === "PHONE")
+         res.redirect('/');
+     res.render('cub3D');
+ });
 
 router.get('/square2D', function(req, res) {
 

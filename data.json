@@ -18,7 +18,7 @@
       [
         "C",
         "C#",
-        "Ruby"
+        "Golang"
       ]
     ],
     "SskillFList":
@@ -190,16 +190,23 @@
       "link": "https://github.com/Millefeuille42/JSON_lib"
     },
     {
-      "title": "PisciBot",
+      "title": "libft_string",
       "lang":
       [
-        "Javascript",
-        "Ruby",
-        "Python",
+        "C"
+      ],
+      "details": "A 42 friendly C library I designed for string manipulation",
+      "link": "https://github.com/Millefeuille42/libft_string"
+    },
+    {
+      "title": "SegBot",
+      "lang":
+      [
+        "Golang",
         "Rest API"
       ],
-      "details": "A Slackbot to follow admission period members, it alerts when someone validates a project. It prints customizable roadmaps on demand",
-      "link": null
+      "details": "A Slack and Discord Bot to track your group's progress through 42, it alerts when someone validates a project. It prints customizable roadmaps and leaderboards on demand",
+      "link": "https://github.com/Millefeuille42/discord42bot"
     },
     {
       "title": "Spotify Party Mode",

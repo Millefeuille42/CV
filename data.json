@@ -181,22 +181,14 @@
   "projectList":
   [
     {
-      "title": "JSON_lib",
+      "title": "covidTerm",
       "lang":
       [
-        "C"
+        "Golang",
+        "Rest API"
       ],
-      "details": "A JSON C library I designed",
-      "link": "https://github.com/Millefeuille42/JSON_lib"
-    },
-    {
-      "title": "libft_string",
-      "lang":
-      [
-        "C"
-      ],
-      "details": "A 42 friendly C library I designed for string manipulation",
-      "link": "https://github.com/Millefeuille42/libft_string"
+      "details": "A little Terminal Program that gets global or per country All-Time Covid19 stats.",
+      "link": "https://github.com/Millefeuille42/covidTerm"
     },
     {
       "title": "SegBot",
@@ -207,20 +199,6 @@
       ],
       "details": "A Slack and Discord Bot to track your group's progress through 42, it alerts when someone validates a project. It prints customizable roadmaps and leaderboards on demand",
       "link": "https://github.com/Millefeuille42/discord42bot"
-    },
-    {
-      "title": "Spotify Party Mode",
-      "lang":
-      [
-        "Javascript",
-        "Node.js",
-        "EJS",
-        "HTML",
-        "CSS",
-        "Rest API"
-      ],
-      "details": "A WebApp for Spotify that create a shared playing queue",
-      "link": null
     },
     {
       "title": "Cursus 42",
@@ -236,13 +214,18 @@
       "link": "https://github.com/Millefeuille42/MilleFeuille42"
     },
     {
-      "title": "Shellscripts",
+      "title": "Spotify Party Mode",
       "lang":
       [
-        "Shell"
+        "Javascript",
+        "Node.js",
+        "EJS",
+        "HTML",
+        "CSS",
+        "Rest API"
       ],
-      "details": "A bunch of \"Life Saving\" Shell scripts I designed",
-      "link": "https://github.com/Millefeuille42/shellscripts"
+      "details": "A WebApp for Spotify that create a shared playing queue",
+      "link": null
     },
     {
       "title": "Cub3D.js",

@@ -20,7 +20,6 @@ router.get('/', function(req, res) {
             scholarList: data["scholarList"],
             achievList: data["achievList"],
             projectList: data["projectList"],
-            TskillFList: data["aboutList"]["TskillFList"],
             SskillFList: data["aboutList"]["SskillFList"],
             spareTimeActivities: data["aboutList"]["spareTimeActivities"],
             languages: data["aboutList"]["languages"],

@@ -14,31 +14,60 @@
         "Javascript",
         "Node.js",
         "EJS"
-      ],
-      [
-        "C",
-        "C#",
-        "Golang"
       ]
     ],
     "SskillFList":
     [
       [
-        "Mentoring",
-        "Patience",
-        "Tolerance"
+        [
+          "Mentoring",
+          "Patience",
+          "Tolerance"
+        ],
+        [
+          "Leadership",
+          "Coordination",
+          "Management",
+          "Research",
+          "Organization"
+        ],
+        [
+          "Maths",
+          "Energy",
+          "Environment"
+        ]
       ],
       [
-        "Leadership",
-        "Coordination",
-        "Management",
-        "Research",
-        "Organization"
+        [
+          "C",
+          "C#",
+          "Golang"
+        ],
+        [
+          "HTML",
+          "CSS",
+          "Javascript",
+          "Node.js",
+          "EJS"
+        ]
       ],
       [
-        "Maths",
-        "Energy",
-        "Environment"
+        [
+          "Cloud Computing",
+          "Networking",
+          "Rest API"
+        ],
+        [
+          "Grafana",
+          "PhpMyAdmin",
+          "Wordpress",
+          "Git"
+        ],
+        [
+          "PostgreSQL",
+          "MySQL",
+          "MongoDB"
+        ]
       ]
     ],
     "spareTimeActivities":
@@ -195,6 +224,8 @@
       "lang":
       [
         "Golang",
+        "PostgreSQL",
+        "Grafana",
         "Rest API"
       ],
       "details": "A Slack and Discord Bot to track your group's progress through 42, it alerts when someone validates a project. It prints customizable roadmaps and leaderboards on demand",

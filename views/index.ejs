@@ -40,30 +40,27 @@
         <div class="categoryEntry sk">
           <h2>Skills</h2>
           <div class="skEntry">
-            <div class="skills">
-              <% for (var entry in TskillFList) { %>
-                <% if (entry != 0) { %>
-                  <div class="limiter"></div>
-                <% } entry = TskillFList[entry]; %>
-                <ul class="skillFamily">
-                  <% for (var skill in entry) { skill = entry[skill];%>
-                    <li class="skills"> <%= skill %></li>
-                  <% } %>
-                </ul>
+
+
+            <% for (var entry in SskillFList) { %>
+              <% if (entry != 0) { %>
+                <div class="Vlimiter"></div>
+              <% } entry = SskillFList[entry]; %>
+
+              <div class="skills">
+                <% for (var sk_entry in entry) { %>
+                  <% if ( sk_entry != 0) { %>
+                    <div class="limiter"></div>
+                  <% } sk_entry = entry[sk_entry]; %>
+                  <ul class="skillFamily">
+                    <% for (var skill in sk_entry) { skill = sk_entry[skill];%>
+                      <li class="skills"> <%= skill %></li>
+                    <% } %>
+                  </ul>
+                <% } %>
+              </div>
               <% } %>
-            </div>
-            <div class="skills">
-              <% for (var entry in SskillFList) { %>
-                <% if (entry != 0) { %>
-                  <div class="limiter"></div>
-                <% } entry = SskillFList[entry]; %>
-                <ul class="skillFamily">
-                  <% for (var skill in entry) { skill = entry[skill];%>
-                  <li class="skills"> <%= skill %></li>
-                  <% } %>
-                </ul>
-              <% } %>
-            </div>
+
           </div>
         </div>
         <div class="categoryEntry">

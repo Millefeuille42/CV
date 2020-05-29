@@ -132,11 +132,9 @@ function sketch()
         }
     }
 
-    for (let i in walls)
-    {
-        let wall = walls[i];
+    walls.forEach(wall => {
         wall.show(ctx);
-    }
+    })
 
     for (let angle = player.dir - player.fov / 2; angle < player.dir + player.fov / 2; angle += 1)
     {

@@ -211,6 +211,16 @@ span.details
 .sk
 {
   flex-direction: column;
+  min-width: 8em;
+}
+
+@media screen and (max-width: 1000px) {
+  .skEntry
+  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .skEntry
@@ -226,7 +236,7 @@ div.skills
   flex-wrap: nowrap;
   justify-content: center;
   align-content: center;
-
+  min-width: 5em;
   width: 50%;
 }
 

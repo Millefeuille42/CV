@@ -218,6 +218,15 @@ span.details
   flex-direction: column;
 }
 
+@media screen and (max-width: 1000px) {
+  .skEntry
+  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
 .skEntry
 {
   display: flex;

@@ -73,7 +73,7 @@ function draw() {
   background(0);
   textSize(32)
 
-  frm_avr[count] = frameRate()
+  frm_avr[count % 10] = frameRate()
   frm = mode(frm_avr)
 
   if (maxNodes == 0) {

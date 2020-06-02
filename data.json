@@ -259,13 +259,13 @@
       "link": null
     },
     {
-      "title": "Cub3D.js",
+      "title": "Portfolio.js",
       "lang":
       [
         "Javascript"
       ],
-      "details": "A little raycaster I designed. Click this tile to play! (Not available on phones)",
-      "link": "/cub3D"
+      "details": "My Graphics App portfolio ported to JS",
+      "link": "/graphicsStuff"
     }
   ]
 }

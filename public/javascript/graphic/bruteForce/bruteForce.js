@@ -5,11 +5,19 @@ let count
 let bestDist
 let bestPathRecorded
 let goal
+let frm_avr
+let frm
+
+const mode = (myArray) =>
+    myArray.reduce(
+        (a,b,i,arr)=>
+            (arr.filter(v=>v===a).length>=arr.filter(v=>v===b).length?a:b),
+        null)
 
 function display_change(value, id)
 {
-	document.getElementById(
-		`${id}`).innerHTML = value;
+  document.getElementById(
+      `${id}`).innerHTML = value;
 }
 
 function setup() {
@@ -18,6 +26,7 @@ function setup() {
 
   nodes = []
   order = []
+  frm_avr = []
 
   maxNodes = 0;
 
@@ -39,6 +48,7 @@ function restart() {
 
   nodes = []
   order = []
+  frm_avr = []
 
   maxNodes = document.getElementById('nodeRange').value;
 
@@ -63,11 +73,13 @@ function draw() {
   background(0);
   textSize(32)
 
+  frm_avr[count] = frameRate()
+  frm = mode(frm_avr)
+
   if (maxNodes == 0) {
     return
   }
 
-  let frm = 60
   let curDist = getDist()
 
   if (curDist < bestDist) {
@@ -91,7 +103,7 @@ function draw() {
   }
   if (sTimeLeft >= 1) {
     sTimeLeft =
-    timeString += floor(sTimeLeft) + "s"
+        timeString += floor(sTimeLeft) + "s"
   }
 
   drawPath()
@@ -140,7 +152,7 @@ function lexicoSwap(array) {
   order = order.concat(tempArray)
 
   if (xMax == -1) {
-      return -1
+    return -1
   }
   return 0
 }
@@ -203,8 +215,8 @@ function swap(array, i, i2) {
 
 function fact(num)
 {
-    var rval=1;
-    for (var i = 2; i <= num; i++)
-        rval = rval * i;
-    return rval;
+  var rval=1;
+  for (var i = 2; i <= num; i++)
+    rval = rval * i;
+  return rval;
 }

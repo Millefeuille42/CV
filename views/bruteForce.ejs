@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>BruteForce Visualizer</title>
+    <link rel="stylesheet" href="/stylesheets/graphical.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="/javascript/graphic/bruteForce/bruteForce.js"></script>
+  </head>
+  <body>
+    <div id="p5container"></div>
+    <div class="controls">
+        <label>
+            Nodes
+            <input id="nodeRange" type="range" min="3" max="10" value="6"
+                   oninput="display_change(this.value, 'nodesNum')">
+            <span id="nodesNum">6</span>
+        </label>
+        <label>
+            Nodes
+            <input type="button" value="Start"
+                   onclick="restart()">
+        </label>
+    </div>
+  </body>
+</html>

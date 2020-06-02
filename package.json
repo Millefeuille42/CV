@@ -13,5 +13,8 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "express-device": "^0.4.2"
+  },
+  "devDependencies": {
+    "mod_autoindex": "^1.8.0"
   }
 }

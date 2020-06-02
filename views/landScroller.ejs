@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Land</title>
+    <link rel="stylesheet" href="/stylesheets/graphical.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="/javascript/graphic/landScroller/landScroller.js"></script>
+  </head>
+  <body>
+    <div id="p5container"></div>
+    <div class="controls">
+        <label>
+            Resolution
+            <input type="range" min="10" max="45" value="30"
+                   oninput="setRes(this.value, 10, 45); display_change(this.value, 'fov')">
+            <span id="fov">30</span>
+        </label>
+        <label>
+          Map Width
+            <input type="range" min="100" max="2000" value="1200"
+                   oninput="setMW(this.value, 100, 2000); display_change(this.value, 'mWidth')">
+            <span id="mWidth">1200</span>
+        </label>
+        <label>
+          Map Height
+          <input type="range" min="300" max="2000" value="1000"
+                 oninput="setMH(this.value, 300, 2000); display_change(this.value, 'mHeight')">
+          <span id="mHeight">1000</span>
+        </label>
+
+        <label>
+          Fill
+          <input type="checkbox" id="fill" checked>
+        </label>
+        <label>
+          Stroke
+          <input type="checkbox" id="stroke">
+        </label>
+
+    </div>
+  </body>
+</html>

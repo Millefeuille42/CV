@@ -17,11 +17,13 @@ class Player
     forward(map)
     {
         var n_pos = new Vector(this.pos.x, this.pos.y);
+        var shift = new Vector(Math.cos(this.dir * Math.PI / 180) / 10,
+            Math.sin(this.dir * Math.PI / 180) / 10)
 
-        n_pos.x += Math.cos(this.dir * Math.PI / 180) / 5;
-        n_pos.y += Math.sin(this.dir * Math.PI / 180) / 5;
+        n_pos.x += shift.x;
+        n_pos.y += shift.y;
 
-        if (map[Math.floor(n_pos.y)][Math.floor(n_pos.x)] == '0')
+        if (map[Math.floor(n_pos.y + shift.y)][Math.floor(n_pos.x + shift.x)] == '0')
         {
             this.pos.x = n_pos.x;
             this.pos.y = n_pos.y;
@@ -30,11 +32,12 @@ class Player
     backward(map)
     {
         var n_pos = new Vector(this.pos.x, this.pos.y);
+        var shift = new Vector(Math.cos(this.dir * Math.PI / 180) / 10,
+            Math.sin(this.dir * Math.PI / 180) / 10)
 
-        n_pos.x -= Math.cos(this.dir * Math.PI / 180) / 5;
-        n_pos.y -= Math.sin(this.dir * Math.PI / 180) / 5;
-
-        if (map[Math.floor(n_pos.y)][Math.floor(n_pos.x)] == '0')
+        n_pos.x -= shift.x;
+        n_pos.y -= shift.y;
+        if (map[Math.floor(n_pos.y - shift.y)][Math.floor(n_pos.x - shift.x)] == '0')
         {
             this.pos.x = n_pos.x;
             this.pos.y = n_pos.y;
@@ -43,11 +46,12 @@ class Player
     strafe_left(map)
     {
         var n_pos = new Vector(this.pos.x, this.pos.y);
+        var shift = new Vector(Math.cos((this.dir + 90) * Math.PI / 180) / 10,
+            Math.sin((this.dir + 90) * Math.PI / 180) / 10)
 
-        n_pos.x -= Math.cos((this.dir + 90) * Math.PI / 180) / 5;
-        n_pos.y -= Math.sin((this.dir + 90) * Math.PI / 180) / 5;
-
-        if (map[Math.floor(n_pos.y)][Math.floor(n_pos.x)] == '0')
+        n_pos.x -= shift.x;
+        n_pos.y -= shift.y;
+        if (map[Math.floor(n_pos.y - shift.y)][Math.floor(n_pos.x - shift.x)] == '0')
         {
             this.pos.x = n_pos.x;
             this.pos.y = n_pos.y;
@@ -56,36 +60,27 @@ class Player
     strafe_right(map)
     {
         var n_pos = new Vector(this.pos.x, this.pos.y);
+        var shift = new Vector(Math.cos((this.dir + 90) * Math.PI / 180) / 10,
+            Math.sin((this.dir + 90) * Math.PI / 180) / 10)
 
-        n_pos.x += Math.cos((this.dir + 90) * Math.PI / 180) / 5;
-        n_pos.y += Math.sin((this.dir + 90) * Math.PI / 180) / 5;
+        n_pos.x += shift.x;
+        n_pos.y += shift.y;
 
-        if (map[Math.floor(n_pos.y)][Math.floor(n_pos.x)] == '0')
-        {
+        if (map[Math.floor(n_pos.y + shift.y)][Math.floor(n_pos.x + shift.x)] == '0')        {
             this.pos.x = n_pos.x;
             this.pos.y = n_pos.y;
         }
     }
     look_left()
     {
-        this.dir -= 10;
+        this.dir -= 5;
         if (this.dir <= 0)
             this.dir = 360 - Math.abs(this.dir);
     }
     look_right()
     {
-        this.dir += 10;
+        this.dir += 5;
         if (this.dir >= 360)
             this.dir = this.dir - 360;
-    }
-    look_up()
-    {
-        if (this.view_angle < 100)
-            this.view_angle += 20;
-    }
-    look_down()
-    {
-        if (this.view_angle > -100)
-            this.view_angle -= 20;
     }
 }

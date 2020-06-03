@@ -1,6 +1,6 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-
+var keySet = []
 var map =
     [
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
@@ -31,9 +31,11 @@ var map =
 
 var player = new Player(90, {x: 3, y: 6},0, canvas);
 
+keySet.fill(0, 0,100)
+
 resize_canvas();
 window.addEventListener("resize", resize_canvas);
-setInterval(keyHandler(), 1);
+setInterval(keyHandler, 1/60);
 
 function display_change(value, id)
 {
@@ -58,42 +60,40 @@ function setFov(value)
     sketch();
 }
 
+document.onkeyup = function(evt) {
+    keySet[evt.keyCode] = 0;
+}
+
+document.onkeydown = function(evt) {
+    keySet[evt.keyCode] = 1;
+};
+
 function keyHandler()
 {
-    document.onkeydown = function(evt) {
-        if (evt.keyCode == 87) {
-            player.forward(map);
-            sketch();
-        }
-        if (evt.keyCode == 83) {
-            player.backward(map);
-            sketch();
-        }
-        if (evt.keyCode == 65) {
-            player.strafe_left(map);
-            sketch();
-        }
-        if (evt.keyCode == 68) {
-            player.strafe_right(map);
-            sketch();
-        }
-        if (evt.keyCode == 38) {
-            player.look_up();
-            sketch();
-        }
-        if (evt.keyCode == 40) {
-            player.look_down();
-            sketch();
-        }
-        if (evt.keyCode == 37) {
-            player.look_left();
-            sketch();
-        }
-        if (evt.keyCode == 39) {
-            player.look_right();
-            sketch();
-        }
-    };
+    if (keySet[87] == 1) {
+        player.forward(map);
+        sketch();
+    }
+    else if (keySet[83] == 1) {
+        player.backward(map);
+        sketch();
+    }
+    if (keySet[65] == 1) {
+        player.strafe_left(map);
+        sketch();
+    }
+    else if (keySet[68] == 1) {
+        player.strafe_right(map);
+        sketch();
+    }
+    if (keySet[37] == 1) {
+        player.look_left();
+        sketch();
+    }
+    else if (keySet[39] == 1) {
+        player.look_right();
+        sketch();
+    }
 }
 
 function sketch()

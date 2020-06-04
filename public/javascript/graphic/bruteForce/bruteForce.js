@@ -122,7 +122,7 @@ function draw() {
     background(0);
     text(nf((count / goal) * 100) + "%", width / 16, height * 2.3 / 3);
     text(nf(count) + " / " + nf(goal), width / 16, height * 2.5 / 3);
-    text(bestPathRecorded, width / 2, height * 2.5 / 3);
+    text(bestorder, width / 2, height * 2.5 / 3);
     translate(0, height / 3)
     drawBestPath()
     drawnodes(nodes, 255, 255, 255, 10)

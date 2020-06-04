@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forward Kinematics</title>
+    <link rel="stylesheet" href="/stylesheets/graphical.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="/javascript/graphic/kinematics/ForwardKinematics.js"></script>
+</head>
+<body>
+<div id="p5container"></div>
+<div class="controls">
+    <label>
+        Number of tentacles
+        <input type="range" min="1" max="10" value="1"
+               oninput="setTents(this.value, 1, 10); display_change(this.value, 'tentN')">
+        <span id="tentN">1</span>
+    </label>
+    <label>
+        See Joints
+        <input type="checkbox" id="seeJoints">
+    </label>
+
+</div>
+</body>
+</html>

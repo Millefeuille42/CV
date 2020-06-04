@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fixed Inverse Kinematics</title>
+    <link rel="stylesheet" href="/stylesheets/graphical.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="/javascript/graphic/kinematics/FixedReverseKinematics.js"></script>
+</head>
+<body>
+<div id="p5container"></div>
+<div class="controls">
+    <label>
+        Number of tentacles
+        <input type="range" min="1" max="10" value="1"
+               oninput="setTents(this.value, 1, 10); display_change(this.value, 'tentN')">
+        <span id="tentN">1</span>
+    </label>
+    <label>
+        Number of joints
+        <input type="range" min="3" max="200" value="25"
+               oninput="setJoints(this.value, 3, 200); display_change(this.value, 'jointN')">
+        <span id="jointN">25</span>
+    </label>
+    <label>
+        Length
+        <input type="range" min="10" max="200" value="20"
+               oninput="setLen(this.value, 3, 200); display_change(this.value, 'segLen')">
+        <span id="segLen">25</span>
+    </label>
+
+    <label>
+        See Joints
+        <input type="checkbox" id="seeJoints">
+    </label>
+
+</div>
+</body>
+</html>

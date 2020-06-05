@@ -3,6 +3,7 @@ let joints = 25
 let len = 20
 
 let tentacles = []
+let ball;
 
 function display_change(value, id)
 {
@@ -47,6 +48,52 @@ class Vector
 		this.x = x;
 		this.y = y;
 	}
+
+	translate(dir) {
+		this.x += dir.x;
+		this.y += dir.y;
+	}
+}
+
+class Ball {
+	constructor(pos_x, pos_y, dir_x, dir_y) {
+		this.pos = new Vector(pos_x, pos_y)
+		this.dir = new Vector(dir_x, dir_y)
+		this.r = 255;
+		this.g = 0;
+		this.b = 0;
+	}
+
+	move() {
+		this.pos.translate(this.dir)
+
+		if (this.pos.x >= width - 25 || this.pos.x <= 25) {
+			this.bounce(1)
+		} else if (this.pos.y >= height - 25 || this.pos.y <= 25) {
+			this.bounce(0)
+		}
+
+		this.pos.translate(this.dir)
+	}
+
+	bounce(way) {
+		if (way == 1) {
+			this.dir.x = -this.dir.x
+		} else {
+			this.dir.y = -this.dir.y
+		}
+		this.r = random(0, 255)
+		this.g = random(0, 255)
+		this.b = random(0, 255)
+	}
+
+	show() {
+		noStroke()
+		fill(this.r, this.g, this.b, 100)
+		ellipse(this.pos.x, this.pos.y, 50, 50)
+		fill(255, 255, 255, 50)
+		ellipse(this.pos.x, this.pos.y, 20, 20)
+	}
 }
 
 class Segment {
@@ -57,7 +104,7 @@ class Segment {
 		this.angle = angle
 		this.child = child
 		this.parent = undefined
-		this.weight = 5 * (1.05 / tentMax)
+		this.weight = 5 * (1.15 / tentMax)
 
 		this.basePos = new Vector(x, y)
 
@@ -164,6 +211,7 @@ class Segment {
 	}
 }
 
+
 function setup() {
 	canvas = createCanvas(windowWidth / 1.2, windowHeight / 1.2);
 	canvas.parent('p5container')
@@ -174,6 +222,7 @@ function setup() {
 
 function restart() {
 	tentacles = []
+	ball = new Ball(200, 200, 2, 2)
 	for (let i2 = 0; i2 < tentMax; i2++) {
 		tentacles[i2] = new Segment(width / (parseInt(tentMax,10) + 1) * (i2 + 1), height, len, -90)
 		for (let i = 0; i < joints - 1; i++) {
@@ -186,12 +235,21 @@ function draw() {
 	resizeCanvas(windowWidth / 1.2, windowHeight / 1.2)
 	background(0);
 
+
+	if (document.getElementById("ball").checked === true) {
+		ball.move()
+		ball.show()
+	}
+
 	for (let i = 0; i < tentMax; i++) {
-		tentacles[i].pointSpot(mouseX, mouseY)
+		if (document.getElementById("ball").checked === false) {
+			tentacles[i].pointSpot(mouseX, mouseY)
+		} else {
+			tentacles[i].pointSpot(ball.pos.x, ball.pos.y)
+		}
 		tentacles[i].update()
 		let or = tentacles[i].getOrigin()
 		or.glue()
 		tentacles[i].show()
 	}
-
 }

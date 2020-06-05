@@ -4,6 +4,7 @@ let maxNodes
 let count
 let bestDist
 let bestPathRecorded
+let bestOrder
 let goal
 let frm_avr
 let frm
@@ -86,6 +87,7 @@ function draw() {
     console.log(bestDist)
     bestDist = curDist
     bestPathRecorded = order.slice()
+    bestOrder = order
   }
 
   let sTimeLeft = (((1/frm) * count) / count) * (goal - count) + 1
@@ -102,8 +104,7 @@ function draw() {
     timeString += floor(mTimeLeft) + "m "
   }
   if (sTimeLeft >= 1) {
-    sTimeLeft =
-        timeString += floor(sTimeLeft) + "s"
+    timeString += floor(sTimeLeft) + "s"
   }
 
   drawPath()
@@ -122,7 +123,6 @@ function draw() {
     background(0);
     text(nf((count / goal) * 100) + "%", width / 16, height * 2.3 / 3);
     text(nf(count) + " / " + nf(goal), width / 16, height * 2.5 / 3);
-    text(bestorder, width / 2, height * 2.5 / 3);
     translate(0, height / 3)
     drawBestPath()
     drawnodes(nodes, 255, 255, 255, 10)
@@ -131,7 +131,7 @@ function draw() {
   }
 }
 
-function lexicoSwap(array) {
+function lexicoSwap() {
   let xMax = -1
   let yMax = -1
 

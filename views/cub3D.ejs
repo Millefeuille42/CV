@@ -5,24 +5,31 @@
     <meta charset="UTF-8">
     <title>cub3D</title>
     <link rel="stylesheet" href="/stylesheets/graphical.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="/javascript/graphic/vector.js"></script>
+    <script src="/javascript/graphic/color.js"></script>
+    <script src="/javascript/graphic/cub3D/player.js"></script>
+    <script src="/javascript/graphic/cub3D/ray.js"></script>
+    <script src="/javascript/graphic/cub3D/cub3D.js"></script>
+
 </head>
 
 <body>
-<canvas id="canvas">This browser does not support canvas</canvas>
+  <div id="p5container"></div>
 <div class="controls">
-    <label>
-        Fov
-        <input type="range" min="40" max="100" value="90"
-               oninput="setFov(this.value); display_change(this.value, 'fov')">
-        <span id="fov">90</span>
-    </label>
+  <label>
+      Resolution
+      <input type="range" min="0" max="30" value="0"
+             oninput="setRes(this.value, 0, 30); display_change(this.value, 'res')">
+      <span id="res">0</span>
+  </label>
     <label>
         Minimap
-        <input type="checkbox" id="minimap" onclick="sketch();">
+        <input type="checkbox" id="minimap">
     </label>
     <label>
         Shading
-        <input type="checkbox" id="shading" checked onclick="sketch();">
+        <input type="checkbox" id="shading" checked>
     </label>
 </div>
 <div id="text">
@@ -36,12 +43,4 @@
     </ul>
 </div>
 </body>
-
-<script type="text/javascript" src="/javascript/graphic/vector.js"></script>
-<script type="text/javascript" src="/javascript/graphic/square2D/wall.js"></script>
-<script type="text/javascript" src="/javascript/graphic/color.js"></script>
-<script type="text/javascript" src="/javascript/graphic/cub3D/player.js"></script>
-<script type="text/javascript" src="/javascript/graphic/cub3D/ray.js"></script>
-<script type="text/javascript" src="/javascript/graphic/cub3D/cub3D.js"></script>
-
 </html>

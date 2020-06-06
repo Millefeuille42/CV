@@ -41,20 +41,6 @@ function setTents(value, min, max)
 	restart()
 }
 
-class Vector
-{
-	constructor(x = 0, y = 0)
-	{
-		this.x = x;
-		this.y = y;
-	}
-
-	translate(dir) {
-		this.x += dir.x;
-		this.y += dir.y;
-	}
-}
-
 class Ball {
 	constructor(pos_x, pos_y, dir_x, dir_y) {
 		this.pos = new Vector(pos_x, pos_y)

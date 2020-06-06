@@ -17,15 +17,6 @@ function setTents(value, min, max)
 	restart()
 }
 
-class Vector
-{
-	constructor(x = 0, y = 0)
-	{
-		this.x = x;
-		this.y = y;
-	}
-}
-
 class Segment {
 	constructor(x, y, len, angle, _color = 255, parent = undefined)
 	{

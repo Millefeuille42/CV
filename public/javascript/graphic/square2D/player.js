@@ -73,13 +73,13 @@ class Player
     }
     look_left()
     {
-        this.dir -= 5;
+        this.dir -= 3;
         if (this.dir <= 0)
             this.dir = 360 - Math.abs(this.dir);
     }
     look_right()
     {
-        this.dir += 5;
+        this.dir += 3;
         if (this.dir >= 360)
             this.dir = this.dir - 360;
     }

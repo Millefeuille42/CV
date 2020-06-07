@@ -9,7 +9,7 @@
     <script src="/javascript/graphic/kinematics/ReverseKinematics.js"></script>
 </head>
 <body>
-<div id="p5container"></div>
+<div id="p5container" style="cursor: none"></div>
 <div class="controls">
     <label>
         Number of joints
@@ -28,7 +28,15 @@
         See Joints
         <input type="checkbox" id="seeJoints">
     </label>
-
+    <label>
+        See Mouse
+        <input type="checkbox" id="ball" onclick=
+        "if (this.checked == true) {
+        	document.getElementById('p5container').style.cursor = 'auto'
+        } else {
+        document.getElementById('p5container').style.cursor = 'none'
+        }">
+    </label>
 </div>
 </body>
 </html>

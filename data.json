@@ -220,6 +220,16 @@
       "link": "https://github.com/Millefeuille42/covidTerm"
     },
     {
+      "title": "TeleCord",
+      "lang":
+      [
+        "Golang",
+        "Rest API"
+      ],
+      "details": "A two-way interface between Telegram and Discord",
+      "link": "https://github.com/Millefeuille42/covidTerm"
+    },
+    {
       "title": "SegBot",
       "lang":
       [
